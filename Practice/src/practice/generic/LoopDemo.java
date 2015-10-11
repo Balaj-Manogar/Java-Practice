@@ -30,11 +30,13 @@ public class LoopDemo
 			break; // if no break then indefinite loop
 		}
 		
+		
 		for (int i = 0; i < 10; i++)
 		{
 			System.out.println("Outer loop: " + i);
 			for (int j = 0; j < 10; j++)
 			{
+				
 				if(j == 4)
 				{
 					continue; // not executing this loop after continue
@@ -47,6 +49,21 @@ public class LoopDemo
 				
 			}
 		}
+		
+		Outer_Loop:
+			for (int i = 0; i < 10; i++)
+			{
+				System.out.println("Labelled outer loop: " + i);
+				Inner_loop:
+					for (int j = 0; j < 10; j++)
+					{
+						System.out.println("\tLabelled inner loop: " + j);
+						if(j == 4)
+						{
+							break Outer_Loop;
+						}
+					}
+			}
 
 	}
 }
